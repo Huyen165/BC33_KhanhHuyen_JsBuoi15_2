@@ -36,19 +36,55 @@ function ex3() {
 
     }
     console.log("Họ tên: ", fullName);
-    console.log("Tổng thu nhập/ năm :", totalIncome);
-    console.log("Số thuế phải nộp theo quy định / năm là:", personalIncomeTax);
+    console.log("Tổng thu nhập/ năm :", totalIncome + " triệu đồng");
+    console.log("Số thuế phải nộp theo quy định / năm là:", personalIncomeTax + " triệu đồng");
 }
+ex3();
 
 
 // Ex4: Tính tiền cáp 
 // SƠ ĐỒ 3 KHỐI 
 /**
- * INPUT
+ * INPUT: Nhập vào loại khách hàng, số kết nối cơ bản, số kết nối cao cấp
  * 
  * 
- * PROCESS:
+ * PROCESS:1. Nhận giá trịn từ input
+ *         2. Sử dụng function để chia 2 loại  khách hàng
+ *         3. In kết quả ra màn hình
  * 
  * 
- * OUTPUT:
+ * OUTPUT:In ra hóa đơn của đơn hàng.
  */
+
+console.log("Bài tập 4: Tính tiền cáp");
+
+
+function enterprise() {
+    var invoice_handling_fee = 15;
+    var connection_number_fee = prompt("Vui lòng nhập số kênh cơ bản:", "");;
+    var channel_high_class = prompt("Vui lòng nhập số kênh cao cấp:", "");
+    total = invoice_handling_fee + 10 * 75 + (connection_number_fee - 10) * 80 + (channel_high_class * 50);
+    console.log("Tổng hóa đơn của bạn là:", total + "$");
+}
+
+function personHouse() {
+    var invoice_handling_fee = 4.5;
+    var connection_number_fee = 20.5;
+    var channel_high_class = prompt("Vui lòng nhập số kênh cao cấp:", "");
+    total = invoice_handling_fee + connection_number_fee + (channel_high_class * 7.5);
+    console.log("Tổng hóa đơn của bạn là:", total + "$");
+}
+
+
+function ex4() {
+    var typeCustomer = prompt("Bạn mua loại cáp nào? (nhập 1: doanh nghiệp, nhập 2 : gia đình)", "");
+
+    if (typeCustomer === "1") {
+        bill = enterprise();
+    } else if (typeCustomer === "2") {
+        bill = personHouse();
+    } else {
+        console.log("Vui lòng nhập lại!");
+    }
+}
+ex4();

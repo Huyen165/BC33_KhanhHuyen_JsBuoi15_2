@@ -63,7 +63,12 @@ function enterprise() {
     var invoice_handling_fee = 15;
     var connection_number_fee = prompt("Vui lòng nhập số kênh cơ bản:", "");;
     var channel_high_class = prompt("Vui lòng nhập số kênh cao cấp:", "");
-    total = invoice_handling_fee + 10 * 75 + (connection_number_fee - 10) * 80 + (channel_high_class * 50);
+    if (connection_number_fee > 0 && connection_number_fee <= 10) {
+        total = invoice_handling_fee + 10 * 75 + (channel_high_class * 50);
+    } else {
+        total = invoice_handling_fee + 10 * 75 + (connection_number_fee - 10) * 80 + (channel_high_class * 50);
+    }
+
     console.log("Tổng hóa đơn của bạn là:", total + "$");
 }
 
